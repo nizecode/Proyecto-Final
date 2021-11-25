@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tyrannosaurus rex skull
+* source:	https://sketchfab.com/3d-models/tyrannosaurus-rex-skull-820a3a9e9daa4a5099688586e565be6c
+* author:	VibrantNebula (https://sketchfab.com/vibrantnebula)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tyrannosaurus rex skull" (https://sketchfab.com/3d-models/tyrannosaurus-rex-skull-820a3a9e9daa4a5099688586e565be6c) by VibrantNebula (https://sketchfab.com/vibrantnebula) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,4 +1,6 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.131.3';
+import { FontLoader } from 'https://cdn.skypack.dev/three/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'https://cdn.skypack.dev/three/examples/jsm/geometries/TextGeometry.js';
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.131.3/examples/jsm/loaders/GLTFLoader.js';
 
 
@@ -227,6 +229,25 @@ function main() {
     },
   );
 
+  loader.load(
+    'assets/tyrannosaurus_rex_skull/scene.gltf',
+    function (gltf) {
+      accesories = gltf.scene.children[0];
+      accesories.position.x = -28.5;
+      accesories.position.z = 10; 
+      accesories.position.y = 6;
+      accesories.scale.set(0.1, 0.1, 0.1)
+      accesories.rotation.z = Math.PI / 2;
+      scene.add(gltf.scene);
+      animate();
+    },
+    function (xhr) {
+      console.log((xhr.loaded / xhr.total) * 100 + '% cargado');
+    },
+    function (error) {
+      console.log('Un error ocurrio');
+    },
+  );
 
   //Carga columnas
   loader.load(
@@ -328,6 +349,97 @@ function main() {
       console.log('Un error ocurrio');
     },
   );
+
+  //Textos
+  var loadertexto = new THREE.FontLoader();
+
+  loadertexto.load( 'https://cdn.skypack.dev/three/examples/fonts/gentilis_bold.typeface.json', function ( font ) {
+
+    var textGeometry = new THREE.TextGeometry( "Rana", {
+
+      font: font,
+
+      size: 1.5,
+      height: 0.1,
+      curveSegments: 0.01,
+
+      bevelThickness: 0.0001,
+      bevelSize: 0.0001,
+      bevelEnabled: true
+
+    });
+
+    var textMaterial = new THREE.MeshPhongMaterial( 
+      { color: 0x989898, specular: 0x989898 }
+    );
+
+    var mesh = new THREE.Mesh( textGeometry, textMaterial );
+    mesh.position.x = 12;
+    mesh.position.z = 12.7;
+    mesh.position.y = 1;
+    mesh.rotation.y = Math.PI / -2;
+
+    scene.add( mesh );
+
+  });
+
+  loadertexto.load( 'https://cdn.skypack.dev/three/examples/fonts/gentilis_bold.typeface.json', function ( font ) {
+
+    var textGeometry = new THREE.TextGeometry( "Lobo", {
+
+      font: font,
+
+      size: 1.5,
+      height: 0.1,
+      curveSegments: 0.01,
+
+      bevelThickness: 0.0001,
+      bevelSize: 0.0001,
+      bevelEnabled: true
+
+    });
+
+    var textMaterial = new THREE.MeshPhongMaterial( 
+      { color: 0x989898, specular: 0x989898 }
+    );
+
+    var mesh = new THREE.Mesh( textGeometry, textMaterial );
+    mesh.position.x = -5.8;
+    mesh.position.z = 39;
+    mesh.position.y = 0.3;
+    mesh.rotation.y = Math.PI / 1;
+    scene.add( mesh );
+
+  });
+
+  loadertexto.load( 'https://cdn.skypack.dev/three/examples/fonts/gentilis_bold.typeface.json', function ( font ) {
+
+    var textGeometry = new THREE.TextGeometry( "tortuga", {
+
+      font: font,
+
+      size: 1,
+      height: 0.1,
+      curveSegments: 0.01,
+
+      bevelThickness: 0.0001,
+      bevelSize: 0.0001,
+      bevelEnabled: true
+
+    });
+
+    var textMaterial = new THREE.MeshPhongMaterial( 
+      { color: 0x989898, specular: 0x989898 }
+    );
+
+    var mesh = new THREE.Mesh( textGeometry, textMaterial );
+    mesh.position.x = -18;
+    mesh.position.z = 0.8;
+    mesh.position.y = 1;
+    mesh.rotation.y = Math.PI / -2;
+    scene.add( mesh );
+
+  });
 
   //Estructuras
   //Walls
